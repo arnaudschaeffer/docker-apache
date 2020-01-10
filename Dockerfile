@@ -1,10 +1,10 @@
 FROM debian:stretch
 
-ARG UID=33
-ARG GID=33
+ENV UID=33
+ENV GID=33
 
-RUN usermod -u "$UID" www-data
-RUN groupmod -g "${GID}" www-data
+RUN usermod -u $UID www-data
+RUN groupmod -g $GID www-data
 
 ENV HTTPD_PREFIX /usr/local/apache2
 ENV PATH $HTTPD_PREFIX/bin:$PATH
